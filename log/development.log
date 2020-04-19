@@ -761,3 +761,65 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/edit.html.erb within layouts/application (16.0ms)
 Completed 200 OK in 347ms (Views: 318.0ms | ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2019-10-25 22:38:05 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/maasa/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/maasa/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb (12.0ms)
+Completed 200 OK in 74ms (Views: 36.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2019-10-25 22:38:17 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (26.1ms)
+Completed 200 OK in 581ms (Views: 566.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2019-10-25 22:38:28 -0700
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 80ms (Views: 72.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2019-10-25 22:38:33 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (99.2ms)
+Completed 200 OK in 186ms (Views: 138.5ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2019-10-25 22:39:16 -0700
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f7It0j3VE82H2KMPN5amS3QFWe9bidJYmK0mPMTjdg96c8yKZ1nu8lL3weCRTG3DzhW5qQyit/rm8axrdFkmPA==", "post"=>{"title"=>"Rails Introduction Test", "description"=>"asdfasdf"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[33mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", nil], ["description", nil], ["updated_at", "2019-10-26 05:39:16.546186"], ["id", 1]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 49ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2019-10-25 22:39:16 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 55ms (Views: 45.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2019-10-25 22:43:05 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 56ms (Views: 46.9ms | ActiveRecord: 0.4ms)
+
+
